@@ -67,7 +67,7 @@ st.write(reviews[0])
 st.write(len(reviews2vectors))
 st.write(reviews2vectors[0])
 
-from sklearn.naive_bayes import MultinomialNB
+from sklearn.feature_extraction.text import CountVectorizer
 
-clf1 = MultinomialNB()
-clf1.fit(reviews2vectors, labels)
+vectorizer = CountVectorizer()
+review_vectorizer = vectorizer.fit_transform(reviews)
