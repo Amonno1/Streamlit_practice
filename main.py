@@ -61,3 +61,8 @@ def review_to_vector(review):
     else:
       review_vector.append(0)
   return review_vector
+
+reviews2vectors = [review_to_vector(r) for r in reviews]
+st.write(reviews[0])
+st.write(len(reviews2vectors))
+st.write(reviews2vectors[0])
