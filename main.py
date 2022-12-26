@@ -66,3 +66,8 @@ reviews2vectors = [review_to_vector(r) for r in reviews]
 st.write(reviews[0])
 st.write(len(reviews2vectors))
 st.write(reviews2vectors[0])
+
+from sklearn.naive_bayes import MultinomialNB
+
+clf1 = MultinomialNB()
+clf1.fit(reviews2vectors, labels)
