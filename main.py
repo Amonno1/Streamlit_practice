@@ -44,5 +44,20 @@ def review_classification(review):
   # return neutral by default
   return 'Neutral'
 
+all_tokens = [] # we use all_tokens variable to store all the words in all the reviews
 for review in reviews:
-  st.write(review_classification(review))
+  review_lower = review.lower()
+  tokens = review_lower.split()
+  all_tokens = all_tokens + tokens
+vocab = set(all_tokens)
+
+def review_to_vector(review):
+  review_vector = []
+  review_lower = review.lower()
+  review_tokens = review_lower.split()
+  for token in vocab:
+    if token in review_tokens:
+      review_vector.append(1)
+    else:
+      review_vector.append(0)
+  return review_vector
